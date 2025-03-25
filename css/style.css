@@ -1,12 +1,11 @@
 :root {
-    --primary-color: #2a9d8f;   /* Fräsch accentfärg */
-    --secondary-color: #264653; /* Mörk kontrastfärg */
-    --bg-color: #f4f4f4;        /* Ljus bakgrund */
+    --primary-color: #2a9d8f;   
+    --secondary-color: #264653; 
+    --bg-color: #f4f4f4;        
     --white: #ffffff;
-    --accent: #e9c46a;          /* Accentfärg för knappar och hover */
+    --accent: #e9c46a;          
   }
 
-/* Nollställ grundmarginaler och padding */
 * {
     margin: 0;
     padding: 0;
