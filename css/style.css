@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #2a9d8f;   /* Fräsch accentfärg */
+    --secondary-color: #264653; /* Mörk kontrastfärg */
+    --bg-color: #f4f4f4;        /* Ljus bakgrund */
+    --white: #ffffff;
+    --accent: #e9c46a;          /* Accentfärg för knappar och hover */
+  }
+
+/* Nollställ grundmarginaler och padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+  }
+
+  /* Huvudcontainer: två kolumner - en smal för sidomenyn och en bredare för innehåll */
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Första kolumnen 200px, resten fylls ut */
+    height: 100vh; /* Gör så att layouten fyller hela webbläsarens höjd */
+  }
+
+  /* SIDOBAR - vänstra kolumnen */
+  .sidebar {
+    display: flex;
+    flex-direction: column;       /* Stapla innehåll vertikalt */
+    justify-content: space-between; /* Fördela logga uppe, copyright nere */
+    border-right: 1px solid #ccc; /* Tunn linje till höger för avgränsning */
+    background-color: var(--white);
+    padding: 1rem;
+  }
+
+  /* Liten logoruta överst */
+  .logo {
+    border: 1px solid #000;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Nav i mitten av sidebaren */
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  /* Copyright-ruta längst ned */
+  .copyright {
+    border: 1px solid #000;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  /* HUVUDINNEHÅLL - högra kolumnen */
+  .content {
+    display: flex;
+    flex-direction: column; /* Sökruta överst, sedan produktgrid, sedan text längst ned */
+    padding: 1rem;
+  }
+
+  /* Sökruta överst */
+  .search {
+    margin-bottom: 1rem;
+  }
+  .search input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  .search button {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+
+  /* Produktgrid i mitten */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    flex-grow: auto; /* Låt grid växa för att fylla utrymmet mellan sök och footer */
+    margin-bottom: 1rem;
+  }
+
+  /* Enskild produkt */
+  .product {
+    border: 1px solid #000;
+    background-color: var(--white);
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s ease;
+  }
+  .product:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Text längst ned i mitten */
+  .bottom-text {
+    margin-top: auto; /* Detta trycker ner elementet till botten */
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    color: var(--secondary-color);
+  }
+  .produktbild {
+    width: 100%;    /* Gör att bilden fyller produktkortets bredd */
+    height: 150px;   /* Bibehåller bildens proportioner */
+    display: block; /* Tar bort eventuellt extra mellanrum under bilden */
+    margin-bottom: 0.5rem; /* Litet avstånd under bilden innan rubriken */
+  }
+  .logobild {
+    width: 100%;
+    height: auto;
+  }
+/* Responsiv: Minska navbaren på små enheter */
+@media (max-width: 600px) {
+    .sidebar {
+      width: 150px;
+      padding: 0.5rem;
+    }
+  
+    .logo,
+    nav ul li,
+    .sidebar .copyright {
+      font-size: 0.8rem;
+    }
+  }
