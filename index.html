@@ -8,50 +8,51 @@
 </head>
 <body>
     <div class="container">
-        <!-- Vänstra kolumnen -->
         <aside class="sidebar">
-          <div>
-            <div class="logo">
-                <img src="./img/png-transparent-hammarby-hd-logo.webp" alt="logo" class="logobild">
+            <div>
+                <div class="logo">
+                    <img src="./img/png-transparent-hammarby-hd-logo.webp" alt="logo" class="logobild">
+                </div>
+                <nav>
+                    <ul>
+                        <li>Produkter</li>
+                        <li>Nyheter</li>
+                        <li>Bäst säljande</li>
+                        <li>Konto</li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-              <ul>
-                <li>Produkter</li>
-                <li>Nyheter</li>
-                <li>Bäst säljande</li>
-                <li>Konto</li>
-              </ul>
-            </nav>
-          </div>
-          <div class="copyright">
-            &copy; 2025 tröjor AB
-          </div>
+            <div class="copyright">&copy; 2025 tröjor AB</div>
         </aside>
-        <!-- Högra kolumnen -->
         <main class="content">
-          <!-- Sökruta -->
-          <div class="search">
-            <input type="text" placeholder="Sök produkter...">
-            <button type="button">Sök</button>
-          </div>
-          <!-- Rutnät med produkter -->
-          <div class="product-grid">
-            <div class="product">
-              <img src="./img/157770601000_10.webp" alt="Produkt 1" class="produktbild">
-              <h3>Hammarby</h3>
-              <p>Pris: 599 kr</p>
+            <div class="search">
+                <input type="text" placeholder="Sök produkter...">
+                <button type="button">Sök</button>
             </div>
-            <div class="product">
-              <img src="./img/157771301000_10.webp" alt="Produkt 1" class="produktbild">
-              <h3>Produkt 2</h3>
-              <p>Pris: 200 kr</p>
+            <div class="cart-container">
+                <div id="cart" class="cart">
+                    <h2>Kundvagn</h2>
+                    <ul id="cart-items"></ul>
+                    <p id="cart-total">Totalt: 0 kr</p>
+                </div>
             </div>
-          </div>
-          <!-- Text längst ned -->
-          <div class="bottom-text">
-            Gjort av Casper 2025
-          </div>
+            <div class="product-grid">
+                <div class="product" data-name="Hammarby" data-price="599">
+                    <img src="./img/157770601000_10.webp" alt="Hammarby" class="produktbild">
+                    <h3>Hammarby</h3>
+                    <p>Pris: 599 kr</p>
+                    <button class="add-to-cart" type="button">Lägg till i kundvagn</button>
+                </div>
+                <div class="product" data-name="Hammarby 2" data-price="299">
+                    <img src="./img/157771301000_10.webp" alt="Produkt 2" class="produktbild">
+                    <h3>Produkt 2</h3>
+                    <p>Pris: 200 kr</p>
+                    <button class="add-to-cart" type="button">Lägg till i kundvagn</button>
+                </div>
+            </div>
+            <div class="bottom-text">Gjort av Casper 2025</div>
         </main>
-      </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
